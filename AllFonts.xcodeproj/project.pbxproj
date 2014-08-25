@@ -19,6 +19,7 @@
 		E9EAA11E19A43E7F002BD113 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9EAA10619A43E7F002BD113 /* UIKit.framework */; };
 		E9EAA12619A43E7F002BD113 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9EAA12419A43E7F002BD113 /* InfoPlist.strings */; };
 		E9EAA12819A43E7F002BD113 /* AllFontsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EAA12719A43E7F002BD113 /* AllFontsTests.m */; };
+		E9EAA13319A43E95002BD113 /* MainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = E9EAA13219A43E95002BD113 /* MainVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		E9EAA12319A43E7F002BD113 /* AllFontsTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AllFontsTests-Info.plist"; sourceTree = "<group>"; };
 		E9EAA12519A43E7F002BD113 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E9EAA12719A43E7F002BD113 /* AllFontsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AllFontsTests.m; sourceTree = "<group>"; };
+		E9EAA13119A43E95002BD113 /* MainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainVC.h; sourceTree = "<group>"; };
+		E9EAA13219A43E95002BD113 /* MainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +114,8 @@
 				E9EAA11219A43E7F002BD113 /* AppDelegate.m */,
 				E9EAA11419A43E7F002BD113 /* Images.xcassets */,
 				E9EAA10919A43E7F002BD113 /* Supporting Files */,
+				E9EAA13119A43E95002BD113 /* MainVC.h */,
+				E9EAA13219A43E95002BD113 /* MainVC.m */,
 			);
 			path = AllFonts;
 			sourceTree = "<group>";
@@ -239,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9EAA13319A43E95002BD113 /* MainVC.m in Sources */,
 				E9EAA11319A43E7F002BD113 /* AppDelegate.m in Sources */,
 				E9EAA10F19A43E7F002BD113 /* main.m in Sources */,
 			);
