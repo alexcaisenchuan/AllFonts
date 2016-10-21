@@ -42,22 +42,22 @@
     
     //Nav
     self.title = @"All Fonts";
-    UIBarButtonItem *navButton = [[UIBarButtonItem alloc]
-                                  initWithTitle:@"Edit Text"
-                                  style:UIBarButtonItemStyleBordered
-                                  target:self
-                                  action:@selector(onRightNavButtonClick)];
+    UIBarButtonItem *navButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit Text"
+                                                                  style:UIBarButtonItemStyleBordered
+                                                                 target:self
+                                                                 action:@selector(onRightNavButtonClick)];
     self.navigationItem.rightBarButtonItem = navButton;
     
     //Datas
-    mShowText = @"Hello World 中文样式";
+    mShowText = @"Hello World 中文样式 0123456789";
     NSArray *arrTemp = [UIFont familyNames];
     mFontFamilyNames = [arrTemp sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1 compare:obj2];
     }];
     
     //Views
-    mTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStyleGrouped];
+    mTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)
+                                             style:UITableViewStyleGrouped];
     mTableView.delegate = self;
     mTableView.dataSource = self;
     [self.view addSubview:mTableView];
@@ -67,6 +67,29 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+/**
+ 生成索引标题数组
+
+ @param dataArray 源数组
+
+ @return 索引标题数组
+ */
+- (NSArray<NSString *> *)sectionIndexTitlesWithDataArray:(NSArray<NSString *> *)dataArray {
+    NSMutableArray *arr = [[NSMutableArray alloc] init];
+    for (NSString *string in dataArray) {
+        BOOL flag = NO;
+        for (NSString *existString in arr) {
+            if ([existString isEqualToString:string]) {
+                flag = YES;
+            }
+        }
+        if (!flag) {
+            [arr addObject:[string substringToIndex:1]];
+        }
+    }
+    return arr;
 }
 
 #pragma mark - UITableView Delegate
@@ -125,6 +148,10 @@
     } else {
         return 50;
     }
+}
+
+- (NSArray<NSString *> *)sectionIndexTitlesForTableView:(UITableView *)tableView {
+    return [self sectionIndexTitlesWithDataArray:mFontFamilyNames];
 }
 
 #pragma mark - AlertView Delegate
