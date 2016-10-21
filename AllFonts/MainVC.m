@@ -49,7 +49,7 @@
     self.navigationItem.rightBarButtonItem = navButton;
     
     //Datas
-    mShowText = @"Hello World 中文样式";
+    mShowText = @"Hello World 中文样式 0123456789";
     NSArray *arrTemp = [UIFont familyNames];
     mFontFamilyNames = [arrTemp sortedArrayUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         return [obj1 compare:obj2];
